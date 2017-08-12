@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text analysis</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <style>
+        textarea {
+    resize: none;
+}
+        .corrected {
+        font-size: large;
+    color: green;
+        }
+        .original {
+        font-size: large;
+    color: red;
+        }
+    </style>
+    <script type="text/javascript">
+</script>
+</head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12" style="margin-top:20px;">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <h3>Input text for analysis:</h3>
+                    <textarea class="form-control" id="textarea" name="text" placeholder="Type in your message" rows="5"></textarea>
+                <h6 class="pull-right" id="count_message"></h6>
+                </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class=" col-sm-8 col-sm-offset-2">
+                        <button id="text-analysis" class="btn btn-info" type="submit">Text Analysis</button>
+                        <button id="spell-check" class="btn btn-info" type="submit">Spell Checker</button>
+                        <button id="sentiment-analysis" class="btn btn-info" type="submit">Sentiment Analysis</button>
+                    </div>
+                    <div id="result" class=" col-sm-8 col-sm-offset-2">
+                        <h3 style="margin-top: 20px;">Sentiment analysis results:</h3>
+                        <table class="table" >
+                          <thead>
+                            <tr>
+                              <th>Classifier</th>
+                              <th>Predicted class (pos/neg)</th>
+                              <th>Confidence</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr id="naive-bag">
+                            </tr>
+                            <tr id="naive-best">
+                            </tr>
+                            <tr id="svm">
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="error" class="alert alert-danger col-sm-8 col-sm-offset-2" style="display: none; margin-top: 20px;"></div>
+            <div id="success" class="alert alert-success col-sm-8 col-sm-offset-2" style="display: none; margin-top: 20px;"></div>
+        </div>
+        <div class="row">
+            <hr id="hr" class="col-sm-8 col-sm-offset-2" style="display:none;" />
+        </div>
+        <div id="chartContainer" style="height: 300px; width: 100%; margin-top: 20px;"></div>
+        <script type="text/javascript" src="static/js/jquery.min.js"></script>
+        <script type="text/javascript" src="static/js/canvasjs.min.js"></script>
+        <script type="text/javascript" src="static/js/text_analysis.js"></script>
+
+    </body>
+
+</html>
